@@ -10,6 +10,10 @@ let lettersContainer = document.querySelector(".letters");
 //success Guess
 let successGuess = 0;
 
+document.querySelector(
+  "footer"
+).innerHTML = `Hangman created by <span>Mohamed Atwa</span>`;
+
 lettersArray.forEach((letter) => {
   //create span
   let span = document.createElement("span");
