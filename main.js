@@ -10,9 +10,9 @@ let lettersContainer = document.querySelector(".letters");
 //success Guess
 let successGuess = 0;
 
-document.querySelector(
+ (document.querySelector(
   "footer"
-).innerHTML = `Hangman created by <span>Mohamed Atwa</span>`;
+).innerHTML = `Hangman created by <span>Mohamed Atwa</span>`);
 
 lettersArray.forEach((letter) => {
   //create span
