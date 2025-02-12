@@ -1,19 +1,38 @@
-# Hangman
+# 🎭 Hangman Game ✨  
+A classic Hangman game built with **HTML, CSS, and JavaScript**. Test your vocabulary and guessing skills by figuring out the hidden word before the stick figure is fully drawn!  
 
-This is a classic Hangman game built with HTML, CSS, and JavaScript. Test your vocabulary and guessing skills by trying to figure out the hidden word one letter at a time before the stick figure is fully drawn.
+🎮 **Live Demo:** [Play Now](https://hangman-atwa.netlify.app/)  
+📂 **GitHub Repository:** [Here](https://github.com/mo-atwa/Hangman.git)
 
-## Features
+## ✨ Features  
+- 🔠 **Interactive Gameplay** – Guess letters and get instant feedback.  
+- 🖼 **Dynamic Word Display** – Reveals correct guesses, draws the hangman for incorrect ones.  
+- 🎨 **Customizable Themes** – Modify styles easily through CSS.  
+- 📱 **Responsive Design** – Optimized for desktops, tablets, and mobile devices.  
+- 🔄 **Replay Option** – Start a new game with a fresh word anytime.  
 
-- **Interactive Gameplay**: Players can guess letters and see immediate feedback on their choices.  
-- **Dynamic Word Display**: Correct guesses reveal letters in the word, while incorrect guesses bring the stick figure closer to completion.  
-- **Customizable Themes**: The game includes a clean and user-friendly interface, with options to customize colors and styles through CSS.  
-- **Responsive Design**: Optimized for various devices, ensuring a smooth experience on desktops, tablets, and mobile phones.  
-- **Replay Option**: Start a new game with a fresh word after each round.  
+## 🛠 Technologies Used  
+- **HTML** 📜 – Structures the game layout.  
+- **CSS** 🎨 – Styles the interface and hangman graphics.  
+- **JavaScript** 🚀 – Handles game logic and user interactions.  
 
-## Technologies Used
+## 📂 Installation & Setup  
+1. Clone the repository:  
+   ```sh  
+   git clone https://github.com/mo-atwa/Hangman.git  
+   cd Hangman  
 
-- **HTML**: Provides the structure for the game layout.  
-- **CSS**: Styles the game, including the hangman graphic and word display.  
-- **JavaScript**: Powers the game logic, tracking guesses, updating the display, and managing game state.  
 
-url https://mo-atwa.github.io/Hangman/
+----------
+
+## 🌟 About Me  
+
+Hey! I'm **Mohamed Atwa**, a passionate **Front-End Developer** specializing in **React.js**.  
+
+🚀 **Portfolio:** [Visit Here](https://atwa-portfolio.netlify.app)  
+📂 **GitHub:** [Check My Projects](https://github.com/mo-atwa)  
+📄 **Resume (CV):** [View Here](https://drive.google.com/file/d/1oH9P8n6Gb4Hv0qNAXYkjiC-fvSW14jEb/view)  
+
+---  
+
+💡 *Feel free to contribute, report issues, or give feedback!* 😊
