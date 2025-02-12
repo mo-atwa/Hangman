@@ -10,9 +10,12 @@ let lettersContainer = document.querySelector(".letters");
 //success Guess
 let successGuess = 0;
 
- (document.querySelector(
-  "footer"
-).innerHTML = `Hangman created by <span>Mohamed Atwa</span>`);
+document.querySelector("footer").innerHTML = `Hangman created by <span id="atwa">ATWA</span>`;
+
+document.getElementById("atwa").addEventListener("click", function () {
+  window.open("https://atwa-portfolio.netlify.app/", "_blank");
+});
+
 
 lettersArray.forEach((letter) => {
   //create span
@@ -34,9 +37,57 @@ lettersArray.forEach((letter) => {
 //opject of words
 const words = {
   programming: ["Python", "JavaScript", "Java", "C++", "Ruby"],
-  countries: ["egypt", "Canada", "Brazil", "usa", "Japan"],
-  people: ["mohamed", "ahmed", "ali", "mostafa", "eman"],
-  movies: ["Inception", "Matrix", "Interstellar", "Pulp Fiction", "Godfather"],
+  countries: [
+    "Egypt",
+    "Canada",
+    "Brazil",
+    "USA",
+    "Japan",
+    "France",
+    "Germany",
+    "Italy",
+    "Spain",
+    "Australia",
+    "India",
+    "China",
+    "Mexico",
+    "Argentina",
+    "South Korea",
+  ],
+  people: [
+    "John",
+    "Emma",
+    "Michael",
+    "Sophia",
+    "David",
+    "Maria",
+    "Alexander",
+    "Isabella",
+    "William",
+    "Olivia",
+    "James",
+    "Ava",
+    "Daniel",
+    "Mia",
+    "Lucas",
+  ],
+  movies: [
+    "Inception",
+    "Matrix",
+    "Interstellar",
+    "Pulp Fiction",
+    "Godfather",
+    "Shawshank Redemption",
+    "Forrest Gump",
+    "The Dark Knight",
+    "Titanic",
+    "Avatar",
+    "Fight Club",
+    "Goodfellas",
+    "Jurassic Park",
+    "Star Wars",
+    "Lord of the Rings",
+  ],
 };
 
 //get random property
@@ -48,8 +99,6 @@ let randomPropValue = words[randomPropName];
 
 let randomValueNumber = Math.floor(Math.random() * randomPropValue.length);
 let randomValueName = randomPropValue[randomValueNumber];
-
-console.log(randomValueName);
 
 //add the category info
 document.getElementById("category").innerText = randomPropName;
@@ -134,20 +183,67 @@ document.addEventListener("click", (e) => {
 let massage = document.querySelector(".message");
 
 function winGame() {
-  // add win massage
-  massage.innerHTML = `<h3>Congratulations! 🎉</h3> <p>You find the word <span>${randomValueName}</span> </p>`;
+  // add win message with refresh button
+  massage.innerHTML = `
+      <h3>Congratulations! 🎉</h3>
+      <p>You find the word <span>${randomValueName}</span></p>
+      <button onclick="location.reload()" class="refresh-btn">Play Again</button>
+  `;
+
   massage.style.cssText = `
       background-color: #f0fdf4;
       color: #16a34a;
       border: solid #bbf7d0 1px;
-    `;
+  `;
+
+  // Add button styles
+  const style = document.createElement("style");
+  style.textContent = `
+      .refresh-btn {
+          margin-top: 10px;
+          padding: 8px 16px;
+          background-color: #16a34a;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+      }
+      .refresh-btn:hover {
+          background-color: #15803d;
+      }
+  `;
+  document.head.appendChild(style);
 }
+
 function endGame() {
-  // add lose massage
-  massage.innerHTML = `<h3>Game Over! </h3> <p>You didn't find the word <span>${randomValueName}</span> </p>`;
+  // add lose message with refresh button
+  massage.innerHTML = `
+      <h3>Game Over!</h3>
+      <p>You didn't find the word <span>${randomValueName}</span></p>
+      <button onclick="location.reload()" class="refresh-btn-lose">Try Again</button>
+  `;
+
   massage.style.cssText = `
-         background-color: #fef2f2;
-         color: #dc2626;
-         border: 1px solid #fecaca;
-    `;
+      background-color: #fef2f2;
+      color: #dc2626;
+      border: 1px solid #fecaca;
+  `;
+
+  // Add button styles
+  const style = document.createElement("style");
+  style.textContent = `
+      .refresh-btn-lose {
+          margin-top: 10px;
+          padding: 8px 16px;
+          background-color: #dc2626;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+      }
+      .refresh-btn-lose:hover {
+          background-color: #b91c1c;
+      }
+  `;
+  document.head.appendChild(style);
 }
