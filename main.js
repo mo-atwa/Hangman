@@ -1,5 +1,5 @@
 //letters
-const letters = "abcdefghigklmnopqrstuvwxyz+";
+const letters = "abcdefghijklmnopqrstuvwxyz+";
 
 //get array from letters
 let lettersArray = Array.from(letters);
@@ -10,12 +10,13 @@ let lettersContainer = document.querySelector(".letters");
 //success Guess
 let successGuess = 0;
 
-document.querySelector("footer").innerHTML = `Hangman created by <span id="atwa">ATWA</span>`;
+document.querySelector(
+  "footer"
+).innerHTML = `Hangman created by <span id="atwa">ATWA</span>`;
 
 document.getElementById("atwa").addEventListener("click", function () {
   window.open("https://atwa-portfolio.netlify.app/", "_blank");
 });
-
 
 lettersArray.forEach((letter) => {
   //create span
@@ -166,7 +167,7 @@ document.addEventListener("click", (e) => {
       theDraw.classList.add(`wrong-${wrongAttemps}`);
 
       //play fail sound
-      // document.getElementById("fail").onplay();
+      document.getElementById("fail").play();
 
       if (wrongAttemps === 5) {
         endGame();
@@ -174,16 +175,19 @@ document.addEventListener("click", (e) => {
         lettersContainer.classList.add("finsished");
       }
     }
-  } else {
-    //paly success souns
-    // document.getElementById("success").onplay();
+    if (theStatus === true) {
+      //play success sound
+      document.getElementById("success").play();
+    }
   }
 });
 
 let massage = document.querySelector(".message");
 
 function winGame() {
-  // add win message with refresh button
+  // add win sound with message
+  document.getElementById("success-game").play();
+
   massage.innerHTML = `
       <h3>Congratulations! 🎉</h3>
       <p>You find the word <span>${randomValueName}</span></p>
@@ -216,7 +220,9 @@ function winGame() {
 }
 
 function endGame() {
-  // add lose message with refresh button
+  // add lose sound with message
+  document.getElementById("fail-game").play();
+
   massage.innerHTML = `
       <h3>Game Over!</h3>
       <p>You didn't find the word <span>${randomValueName}</span></p>
