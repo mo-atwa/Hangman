@@ -12,7 +12,7 @@ let successGuess = 0;
 
 document.querySelector(
   "footer"
-).innerHTML = `Hangman created by <span id="atwa">ATWA</span>`;
+).innerHTML = `Hangman created by <span id="atwa" style="cursor: pointer;">ATWA</span>`;
 
 document.getElementById("atwa").addEventListener("click", function () {
   window.open("https://atwa-portfolio.netlify.app/", "_blank");
